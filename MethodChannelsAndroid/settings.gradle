@@ -1,0 +1,9 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../method_channel_flutter_module/.android/include_flutter.groovy'
+))
+
+include ':method_channel_flutter_module'
+project(':method_channel_flutter_module').projectDir = new File('../method_channel_flutter_module')
